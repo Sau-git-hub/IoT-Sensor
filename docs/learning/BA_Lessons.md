@@ -38,4 +38,14 @@ BA giỏi là người không chỉ thiết kế cho "Luồng hạnh phúc" (Hap
     -   File gửi về bị trống hoặc sai định dạng.
     -   Sever hết dung lượng lưu trữ.
 
-**✍️ Lời khuyên:** Luôn tự hỏi "Nếu... thì sao?" cho mọi tính năng. Điều này giúp hệ thống của bạn bền bỉ (Robust) và chuyên nghiệp hơn.
+---
+## 📍 Bài học 8: Từ "Cái gì" sang "Như thế nào" (Strategy & Architecture)
+Giai đoạn này là bước chuyển mình từ BA sang Architect (Kiến trúc sư):
+
+1.  **Phase 1 (BA):** Tập trung vào **"Cái gì"** (What). Người dùng cần gì? Hệ thống làm được gì?
+2.  **Phase 2 (Architect):** Tập trung vào **"Như thế nào"** (How). Lưu trữ ở đâu? Luồng dữ liệu chạy ra sao?
+
+**🔍 Tại sao cần Sơ đồ (Diagrams)?** 
+Vì hình ảnh có giá trị bằng ngàn lời nói. Sơ đồ **Mermaid** giúp lập trình viên biết họ cần viết API gì, và QA biết cần test luồng nào.
+
+**✍️ Lời khuyên:** Một BA có kiến thức về kiến trúc (Data Schema, API) sẽ được đánh giá cực cao vì bạn nói cùng ngôn ngữ với Team Kỹ thuật.
