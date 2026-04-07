@@ -14,16 +14,27 @@ Công ty ABC triển khai hệ thống cảm biến để thu thập dữ liệu
 ## 🟢 4. Yêu cầu chi tiết (Requirements)
 
 ### 4.1. Yêu cầu về Dữ liệu (Data Requirements)
--   **Định dạng:** File Text có cấu trúc.
--   **Trường thông tin:**
-    -   `Sensor ID`: Mã định danh cảm biến.
-    -   `Pollution Index`: Chỉ số ô nhiễm (0.00 - 100.00).
--   **Tần suất:** 5 phút/gửi 1 lần về server cố định.
+-   **Định dạng:** File Text (CSV hoặc Plain Text).
+-   **Cấu trúc dòng:** `Timestamp, SensorID, Type (Air/Water), Value`.
+-   **Tần suất cập nhật:** 5 phút/lần.
 
 ### 4.2. Yêu cầu chức năng (Functional Requirements)
--   **Dashboard 24h:** Hiển thị biểu đồ/trạng thái ô nhiễm không khí từ các điểm thử nghiệm.
--   **Công cụ trích xuất:** Cho phép người dùng chọn thời điểm/cảm biến để lấy báo cáo về tình trạng ô nhiễm nước/không khí.
+-   **Dashboard 24h:**
+    -   Hiển thị biểu đồ đường (Line Chart) diễn biến ô nhiễm không khí.
+    -   Cửa sổ thời gian: 24 giờ gần nhất kể từ thời điểm xem.
+    -   Khả năng so sánh tối đa 3 Sensor trên cùng một biểu đồ.
+    -   Cơ chế cập nhật: Tự động tải lại dữ liệu (Auto-refresh) mỗi 5 phút.
+-   **Công cụ trích xuất & Báo cáo:**
+    -   Tìm kiếm dữ liệu theo Sensor ID, Loại ô nhiễm và Khoảng thời gian.
+    -   Xuất báo cáo chi tiết ra file **Excel (.xlsx)**.
+    -   Xuất báo cáo tóm tắt kèm biểu đồ ra file **PDF**.
 
-## 🟢 5. Ràng buộc & Giả định (Constraints & Assumptions)
--   Dữ liệu được gửi về một Server cố định đặt tại văn phòng Công ty ABC.
--   Hệ thống Web cần khả năng đọc và xử lý file text định kỳ.
+### 4.3. Yêu cầu phi chức năng (Non-Functional Requirements)
+-   **Tính sẵn sàng:** Hệ thống quét file và cập nhật dữ liệu liên tục 24/7.
+-   **Bảo mật:** Mã hóa thông tin vị trí cảm biến và phân quyền truy cập Dashboard.
+
+## 🟢 5. Các giả định chính (Key Assumptions)
+Để đảm bảo dự án tiến hành đúng tiến độ, BA đã lập các giả định sau:
+1.  **Giao thức lấy file:** Web Server có quyền truy cập vào folder chứa file trên Data Server thông qua SFTP hoặc Shared Drive.
+2.  **Định dạng file:** Luôn tuân thủ đúng cấu trúc đã định nghĩa, không có dòng trống hoặc dữ liệu rác.
+3.  **Hệ lưu trữ:** Dữ liệu sau khi đọc từ file text sẽ được đưa vào một cơ sở dữ liệu quan hệ (RDBMS) để tối ưu việc truy vấn và trích xuất.

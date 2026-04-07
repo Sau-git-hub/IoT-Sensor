@@ -15,4 +15,18 @@ Từ những gạch đầu dòng ngắn gọn, BA cần chuyển hóa thành cá
 -   **Yêu cầu phi chức năng (Non-functional):** Hệ thống sẽ *như thế nào*? (Ví dụ: tốc độ xử lý file, bảo mật).
 
 ---
-*Ghi chú cho học viên:* Hãy so sánh hình ảnh bạn gửi và nội dung tôi soạn trong file `docs/specs/BRD.md` để thấy cách BA "dịch" ngôn ngữ đời thường sang ngôn ngữ dự án.
+## 📍 Bài học 4: Kỹ thuật Khơi gợi yêu cầu (Elicitation)
+BA không chỉ hỏi "Bạn muốn gì?", mà phải hỏi **Đúng người - Đúng việc**. Kỹ thuật này gọi là **Stakeholder Analysis**.
+
+### 1. Phân loại Stakeholder (Các bên liên quan):
+Trong dự án này, chúng ta có 3 nhóm chính:
+-   **Technical Team:** Những người nắm "ruột gan" của sensor và server.
+-   **End-Users:** Những người trực tiếp dùng web mỗi ngày.
+-   **Decision Makers (Sếp/Quản lý):** Những người chi tiền và cần báo cáo cuối tháng.
+
+### 2. Kỹ thuật đặt câu hỏi:
+-   **Câu hỏi mở (Open-ended):** "Quy trình hiện tại sếp đang lấy dữ liệu như thế nào?" (Để tìm hiểu hiện trạng).
+-   **Câu hỏi đóng (Closed-ended):** "Server có hỗ trợ kết nối SSH không?" (Để chốt thông số kỹ thuật).
+
+---
+*Ghi chú cho học viên:* Hãy xem danh sách câu hỏi tôi gợi ý trong tin nhắn và thử đóng vai BA để đi hỏi các bên liên quan nhé!
