@@ -42,3 +42,39 @@ Dựa trên tiêu chuẩn quốc tế (U.S. EPA), dưới đây là các ngưỡ
 13. **Giá trị thương hiệu:** Dự án dùng để công bố dữ liệu ra bên ngoài (PR) hay chỉ dùng nội bộ?
 14. **Thương mại hóa:** Công ty có định đóng gói hệ thống này để bán cho bên khác không?
 15. **Tuân thủ pháp luật:** Có quy chuẩn môi trường nhà nước nào cụ thể mà công ty buộc phải tuân theo không?
+
+---
+
+## 🔍 3. Advanced Elicitation & Edge Cases (Deep Dive)
+
+Phần này tập trung vào các trường hợp ngoại lệ (Exceptions) và khả năng mở rộng hệ thống.
+
+### ⚠️ Nhóm 5: Trường hợp ngoại lệ & Sai số (Edge Cases)
+16. **Mất kết nối cảm biến:** Nếu sensor không gửi file quá 15 phút, hệ thống xử lý thế nào?
+    -   **Giả định:** Dashboard sẽ hiển thị trạng thái "Offline" cho sensor đó và gửi cảnh báo nhẹ.
+17. **Dữ liệu đột biến (Anomaly):** Nếu chỉ số vọt từ 10 lên 100 trong 5 phút thì sao?
+    -   **Giả định:** Hệ thống sẽ ghi nhận nhưng sẽ hiển thị dấu chấm hỏi (?) để yêu cầu kiểm tra sensor vật lý.
+18. **Xung đột tên file:** Nếu 2 sensor gửi file trùng tên đến server?
+    -   **Giả định:** Sensor bắt buộc đặt tên file theo cú pháp `SensorID_YYYYMMDD_HHMM.txt`.
+19. **Sai lệch thời gian:** Ưu tiên giờ của Mirror hay giờ của Server?
+    -   **Giả định:** Lấy thời gian ghi nhận (Timestamp) bên trong nội dung file.
+
+### 🎨 Nhóm 6: UI/UX & Tính năng bổ sung
+20. **Chế độ Ban đêm (Dark Mode):** Nhân viên vận hành trực đêm có cần giao diện tối không?
+    -   **Giả định:** Website sẽ có tính năng chuyển đổi Dark/Light mode.
+21. **Đa ngôn ngữ:** Ngoài tiếng Việt, có cần ngôn ngữ khác không?
+    -   **Giả định:** Hỗ trợ song ngữ Việt - Anh.
+22. **Trực quan hóa vị trí:** Xem theo danh sách hay Bản đồ (Map)?
+    -   **Giả định:** Tích hợp Bản đồ (Leaflet/Google Maps) để ghim vị trí sensor.
+23. **Manual Refresh:** Người dùng có cần nút "Cập nhật ngay" hay chỉ đợi 5 phút?
+    -   **Giả định:** Có nút cập nhật cưỡng bức dữ liệu mới nhất.
+
+### 🔗 Nhóm 7: Tích hợp & Mở rộng (Integration)
+24. **Public API:** Có kế hoạch cung cấp dữ liệu cho bên thứ 3 không?
+    -   **Giả định:** Xây dựng sẵn REST API có bảo mật bằng API Key.
+25. **Tự động hóa:** Nếu ô nhiễm quá cao (>300), có cần kích hoạt máy lọc khí tự động?
+    -   **Giả định:** Phase 1 chỉ cảnh báo. Phase 2 sẽ tích hợp module điều khiển thiết bị.
+26. **Xác thực:** Dùng tài khoản công ty hay tài khoản độc lập?
+    -   **Giả định:** Tích hợp Firebase Auth để đăng nhập bằng Google/Email.
+27. **Lưu trữ dài hạn:** Dữ liệu sau 2 năm sẽ xử lý thế nào?
+    -   **Giả định:** Nén và chuyển vào vùng lưu trữ "lạnh" (Cold Storage) để giảm chi phí.

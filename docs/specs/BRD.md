@@ -65,3 +65,16 @@ Công ty ABC triển khai hệ thống cảm biến để thu thập dữ liệu
 ## 🟢 10. Thuật ngữ (Glossary)
 -   **Pollution Index (PI):** Chỉ số đo lường mức độ ô nhiễm (0 là sạch, 100 là ô nhiễm nặng).
 -   **Sampling Time:** Thời điểm cảm biến ghi nhận giá trị và ghi vào file.
+
+## 🟢 11. Xử lý trường hợp ngoại lệ (Edge Cases & Exceptions)
+| Tình huống | Hành động của hệ thống |
+| ---------- | ---------------------- |
+| Sensor mất kết nối > 15p | Hiển thị trạng thái "Offline" trên Dashboard và gửi cảnh báo nhẹ cho Admin. |
+| Dữ liệu đột biến (Anomaly) | Ghi nhận kèm dấu chấm hỏi (?) để yêu cầu kiểm tra sensor vật lý. |
+| Trùng tên file gửi về | Yêu cầu đổi tên theo chuẩn `SensorID_YYYYMMDD_HHMM.txt` để ghi đè hoặc tạo mới. |
+| Sai lệch thời gian | Ưu tiên lấy `Timestamp` trong nội dung file thay vì giờ của Server. |
+
+## 🟢 12. Lộ trình phát triển (Future Roadmap)
+- **Phase 2 (Tích hợp):** Cung cấp Public API (REST) cho các bên thứ 3.
+- **Phase 3 (Điều khiển):** Tự động kích hoạt máy lọc khí/quạt thông gió khi AQI > 300 thông qua module Relay.
+- **Phase 4 (AI):** Dự báo xu hướng ô nhiễm dựa trên dữ liệu lịch sử và điều kiện thời tiết.

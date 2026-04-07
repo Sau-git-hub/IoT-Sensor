@@ -29,4 +29,13 @@ Trong dự án này, chúng ta có 3 nhóm chính:
 -   **Câu hỏi đóng (Closed-ended):** "Server có hỗ trợ kết nối SSH không?" (Để chốt thông số kỹ thuật).
 
 ---
-*Ghi chú cho học viên:* Hãy xem danh sách câu hỏi tôi gợi ý trong tin nhắn và thử đóng vai BA để đi hỏi các bên liên quan nhé!
+## 📍 Bài học 6: Xử lý trường hợp ngoại lệ (Edge Cases & Exceptions)
+BA giỏi là người không chỉ thiết kế cho "Luồng hạnh phúc" (Happy Path - khi mọi thứ đều chạy đúng), mà phải lường trước các "Cơn ác mộng":
+
+1.  **Happy Path:** Sensor gửi file -> Web hiển thị -> Xong.
+2.  **Edge Case/Exception:** 
+    -   Sensor mất điện đột ngột.
+    -   File gửi về bị trống hoặc sai định dạng.
+    -   Sever hết dung lượng lưu trữ.
+
+**✍️ Lời khuyên:** Luôn tự hỏi "Nếu... thì sao?" cho mọi tính năng. Điều này giúp hệ thống của bạn bền bỉ (Robust) và chuyên nghiệp hơn.
