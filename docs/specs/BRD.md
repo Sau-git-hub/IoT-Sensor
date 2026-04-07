@@ -38,3 +38,30 @@ Công ty ABC triển khai hệ thống cảm biến để thu thập dữ liệu
 1.  **Giao thức lấy file:** Web Server có quyền truy cập vào folder chứa file trên Data Server thông qua SFTP hoặc Shared Drive.
 2.  **Định dạng file:** Luôn tuân thủ đúng cấu trúc đã định nghĩa, không có dòng trống hoặc dữ liệu rác.
 3.  **Hệ lưu trữ:** Dữ liệu sau khi đọc từ file text sẽ được đưa vào một cơ sở dữ liệu quan hệ (RDBMS) để tối ưu việc truy vấn và trích xuất.
+
+## 🟢 6. Phân tích các bên liên quan (Stakeholder Matrix)
+| Stakeholder | Vai trò | Mức độ ảnh hưởng | Kỳ vọng chính |
+| ----------- | ------- | ---------------- | ------------- |
+| Ban Giám đốc | Chủ dự án | Rất cao | Có báo cáo chính xác để ra quyết định môi trường. |
+| Nhân viên Vận hành| Người dùng cuối | Cao | Giao diện Dashboard dễ dùng, cập nhật nhanh. |
+| Đội Kỹ thuật IoT | Nhà cung cấp dữ liệu | Trung bình | Hệ thống Web hoạt động ổn định, không làm nghẽn Server. |
+
+## 🟢 7. Chân dung người dùng (User Personas)
+1.  **Anh Bình (Nhân viên Vận hành):** Cần theo dõi biểu đồ 24h hàng ngày để phát hiện các chỉ số bất thường và báo cáo kịp thời.
+2.  **Chị An (Quản lý dự án):** Cần trích xuất dữ liệu hàng tuần sang Excel để lưu hồ sơ công ty.
+
+## 🟢 8. Danh sách User Stories & Tiêu chí nghiệm thu (Acceptance Criteria)
+| ID | User Story | Tiêu chí nghiệm thu (AC) |
+| -- | ---------- | ----------------------- |
+| US1 | Là nhân viên vận hành, tôi muốn xem biểu đồ 24h để biết diễn biến ô nhiễm. | Biểu đồ hiển thị đúng 24 mốc giờ, tự động refresh mỗi 5 phút. |
+| US2 | Là quản lý, tôi muốn trích xuất file Excel để lưu trữ. | File Excel chứa đầy đủ các cột: Thời điểm, Mã sensor, Chỉ số. |
+| US3 | Là quản lý, tôi muốn so sánh các sensor để biết khu vực nào ô nhiễm hơn. | Cho phép chọn cùng lúc >=2 sensor trên cùng 1 biểu đồ. |
+
+## 🟢 9. Chỉ số thành công (Success Metrics/KPIs)
+-   **Độ trễ dữ liệu:** Dữ liệu từ file text phải xuất hiện trên Web trong vòng tối đa 30 giây sau khi file được gửi.
+-   **Độ chính xác:** Chỉ số trên Web phải khớp 100% với giá trị trong file text.
+-   **Tính ổn định:** Hệ thống hoạt động 24/7 với tỷ lệ uptime > 99%.
+
+## 🟢 10. Thuật ngữ (Glossary)
+-   **Pollution Index (PI):** Chỉ số đo lường mức độ ô nhiễm (0 là sạch, 100 là ô nhiễm nặng).
+-   **Sampling Time:** Thời điểm cảm biến ghi nhận giá trị và ghi vào file.
