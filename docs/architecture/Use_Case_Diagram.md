@@ -33,7 +33,7 @@ graph LR
     
     SYS --- UC6
     
-    UC1 -.-> UC6 : << include >>
+    UC1 -.->|include| UC6
 ```
 
 ## 🔍 Mô tả các Actor & Use Case chính:
