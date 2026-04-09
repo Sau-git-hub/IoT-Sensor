@@ -48,4 +48,15 @@ Giai đoạn này là bước chuyển mình từ BA sang Architect (Kiến trú
 **🔍 Tại sao cần Sơ đồ (Diagrams)?** 
 Vì hình ảnh có giá trị bằng ngàn lời nói. Sơ đồ **Mermaid** giúp lập trình viên biết họ cần viết API gì, và QA biết cần test luồng nào.
 
-**✍️ Lời khuyên:** Một BA có kiến thức về kiến trúc (Data Schema, API) sẽ được đánh giá cực cao vì bạn nói cùng ngôn ngữ với Team Kỹ thuật.
+---
+## 📍 Bài học 9: Sơ đồ hoạt động (Activity Diagram)
+Nếu **System Flow** cho ta cái nhìn tổng quan về các thành phần, thì **Activity Diagram** cho ta cái nhìn chi tiết về **Logic xử lý**:
+
+1.  **Nodes:** Các ô chữ nhật mô tả hành động (Action).
+2.  **Decisions:** Hình kim cương thể hiện các điều kiện Rẽ nhánh (If/Else).
+3.  **Flows:** Các mũi tên chỉ thứ tự thực hiện.
+
+**🔍 Tại sao BA cần vẽ cái này?**
+Để lập trình viên biết họ cần xử lý bao nhiêu trường hợp ngoại lệ (Error handling) và luồng nào là luồng chính.
+
+**✍️ Lời khuyên:** Hãy luôn bắt đầu bằng "Happy Path", sau đó mới thêm các nhánh "Error" để sơ đồ không bị rối.
