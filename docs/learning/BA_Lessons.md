@@ -91,4 +91,14 @@ Nếu "chị" muốn làm việc ở các tập đoàn lớn hoặc ngân hàng,
 **🔍 Tại sao cần BPMN?**
 Vì đây là chuẩn quốc tế. Một bản vẽ BPMN có thể dùng để trao đổi với bất kỳ chuyên gia nào trên thế giới mà không sợ hiểu lầm.
 
-**✍️ Lời khuyên:** Hãy chú ý đến sự kiện "Hẹn giờ" (Timer). Trong IoT, hầu hết quy trình đều bắt đầu từ một sự kiện tự động theo thời gian thay vì chờ con người click chuột.
+---
+## 📍 Bài học 13: Hợp nhất & Chuyển giao (Consolidation & Handover)
+Đây là bài học cuối cùng của giai đoạn BA trước khi chuyển hẳn sang "trận địa" của Developer:
+
+1.  **Single Source of Truth:** Đừng để yêu cầu nằm rải rác ở 10 file khác nhau. Hãy gộp chúng lại thành một bản **Consolidated Specification** duy nhất.
+2.  **Handover (Chuyển giao):** BA phải đảm bảo Developer đọc bản spec này và hiểu 100% việc cần làm mà không cần phải hỏi lại.
+
+**🔍 Tại sao cần làm bước này?**
+Để tránh tam sao thất bản. Nếu chị chỉ gửi 1 file BRD cũ mà không kèm theo các kết quả khơi gợi (Elicitation) sau này, Dev sẽ code thiếu tính năng.
+
+**✍️ Lời khuyên:** Hãy luôn xin chữ ký (Sign-off) của khách hàng trên bản hợp nhất này trước khi bắt đầu code dòng đầu tiên.
