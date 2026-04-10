@@ -101,4 +101,14 @@ Vì đây là chuẩn quốc tế. Một bản vẽ BPMN có thể dùng để t
 **🔍 Tại sao cần làm bước này?**
 Để tránh tam sao thất bản. Nếu chị chỉ gửi 1 file BRD cũ mà không kèm theo các kết quả khơi gợi (Elicitation) sau này, Dev sẽ code thiếu tính năng.
 
-**✍️ Lời khuyên:** Hãy luôn xin chữ ký (Sign-off) của khách hàng trên bản hợp nhất này trước khi bắt đầu code dòng đầu tiên.
+---
+## 📍 Bài học 14: SRS vs BRD - Cầu nối giữa Kinh doanh và Kỹ thuật
+Nhiều người hay nhầm lẫn giữa hai loại tài liệu này. Đây là cách phân biệt đơn giản nhất:
+
+1.  **BRD (Business Requirement Document):** Trả lời câu hỏi **LÀM CÁI GÌ?** (Nhu cầu của Sếp, của khách hàng). Ngôn ngữ mang tính kinh doanh, dễ hiểu cho người không chuyên.
+2.  **SRS (Software Requirement Specification):** Trả lời câu hỏi **HỆ THỐNG LÀM THẾ NÀO?** (Hướng dẫn cho Dev). Ngôn ngữ mang tính kỹ thuật, chi tiết đến từng hàm, từng giao diện.
+
+**🔍 Tại sao cần cả hai?**
+Vì Sếp không rảnh để đọc tài liệu dài 50 trang mô tả API, và Dev không thể lập trình dựa trên một câu nói mơ hồ như "Tôi muốn web đẹp".
+
+**✍️ Lời khuyên:** Hãy dùng BRD để chốt hợp đồng/ngân sách, và dùng SRS để quản lý tiến độ lập trình và nghiệm thu (UAT).
